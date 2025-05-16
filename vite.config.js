@@ -10,6 +10,15 @@ export default defineConfig({
     react()
   ],
   build: {
-    outDir: 'build'
-  }
+    outDir: 'build',
+    // Generate assets with relative paths to fix the MIME type issues
+    assetsDir: 'assets',
+    rollupOptions: {
+      output: {
+        manualChunks: undefined
+      }
+    }
+  },
+  // Ensure Vercel's nested routes work properly
+  base: './'
 })
