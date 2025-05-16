@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Determine the base URL based on environment
 const API_URL = import.meta.env.PROD 
-    ? 'https://online-loan-application-backend.vercel.app' // Production URL
+    ? 'https://loan-app-backend-flsg.vercel.app/'// Production URL
     : 'http://localhost:8080'; // Development URL
 
 // Create axios instance with base URL
