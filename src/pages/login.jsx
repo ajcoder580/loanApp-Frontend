@@ -83,6 +83,9 @@ const Login = () => {
                     console.log('User info from response:', userInfo);
                     console.log('User role:', userInfo?.role);
                     
+                    // Save user data to localStorage for access by other components
+                    localStorage.setItem('user', JSON.stringify(userInfo));
+                    
                     // Update auth context with user info
                     login(userInfo);
                     
