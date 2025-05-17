@@ -177,7 +177,7 @@ const Profile = () => {
   const handleSaveProfile = async () => {
     try {
       // In a real application, you would send the updated profile to the server
-      // await axiosInstance.put('/auth/update-profile', editedUser);
+       // await axiosInstance.put('/auth/update-profile', editedUser);
       
       // For now, we'll just update the local state
       setUser(editedUser);
@@ -229,7 +229,7 @@ const Profile = () => {
       <div className="container mx-auto px-4 sm:px-6 lg:px-8 max-w-6xl">
         {/* Header */}
         <div className="flex flex-wrap items-center justify-between mb-6">
-          <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-700">Welcome, {user?.name || 'User'}</h1>
+          <h1 className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-indigo-700">Welcome, {user?.name.toUpperCase() || 'User'}</h1>
           <div className="flex items-center space-x-4">
             <div className="hidden md:flex items-center bg-indigo-50 px-3 py-1.5 rounded-full">
               <span className="w-2 h-2 rounded-full bg-indigo-600 mr-2"></span>
@@ -388,7 +388,7 @@ const Profile = () => {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-y-6 gap-x-8">
                 <div className="bg-indigo-50 p-4 rounded-lg hover:shadow-md transition-all duration-200">
                   <p className="text-sm font-medium text-indigo-500 mb-1">Full Name</p>
-                  <p className="text-lg font-semibold text-gray-900">{user?.name || 'Not provided'}</p>
+                  <p className="text-lg font-semibold text-gray-900">{user?.name.toUpperCase() || 'Not provided'}</p>
                 </div>
                 <div className="bg-indigo-50 p-4 rounded-lg hover:shadow-md transition-all duration-200">
                   <p className="text-sm font-medium text-indigo-500 mb-1">Email Address</p>
@@ -400,7 +400,7 @@ const Profile = () => {
                 </div>
                 <div className="bg-indigo-50 p-4 rounded-lg hover:shadow-md transition-all duration-200">
                   <p className="text-sm font-medium text-indigo-500 mb-1">Account ID</p>
-                  <p className="text-lg font-semibold text-gray-900">{user?.id ? user.id.substring(0, 8) + '...' : 'Not available'}</p>
+                  <p className="text-lg font-semibold text-gray-900">{user?.id ? user.id.substring() : 'Not available'}</p>
                 </div>
               </div>
             )}
